@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="description" content=""/>
+	<title>OLA_OLA</title>
+	<link rel="stylesheet" href="static/css/style.css"/>
+	<script src="static/js/jquery-1.js"></script>
+	<script src="static/js/jquery-ui.js"></script>
+	<script>
+		$(function () {
+			$("#tabs").tabs({
+				beforeLoad: function (event, ui) {
+					ui.jqXHR.error(function () {
+						ui.panel.html(
+								"Couldn't load this tab. We'll try to fix this as soon as possible. " +
+								"If this wouldn't be a demo.");
+					});
+				}
+			});
+		});
+	</script>
+	<script src="static/js/classie.js"></script>
+	<script>
+		function init() {
+			window.addEventListener('scroll', function (e) {
+				var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+						shrinkOn = 300,
+						header = document.querySelector("header");
+				if (distanceY > shrinkOn) {
+					classie.add(header, "smaller");
+				} else {
+					if (classie.has(header, "smaller")) {
+						classie.remove(header, "smaller");
+					}
+				}
+			});
+		}
+		window.onload = init();
+	</script>
+
+</head>
+<body>
+<header>
+	<div class="top-account-bar">
+		<ul>
+			<li><a class="top-account-bar-text" href="#">LOG OUT</a></li>
+			<li><a class="top-account-bar-text user-email" href="#">PROFILE</a></li>
+			<li><a class="top-account-bar-text user-email" href="#">REED@EXAMPLE.COM</a></li>
+		</ul>
+	</div>
+	<div class="nav-hold">
+		<h1>OLA_OLA</h1>
+	</div>
+</header>
+<div class="main clearfix">
+<div class="sidebar_no_use">
+	
+	
+	
+	
+</div>
+<div class="rightside-content">
+	<div id="tabs" class="nav-list">
+		<ul class="nav-block">
+		<li><a href="#tab2">PROFILE</a></li>
+			<a href="landing.html" style="position: absolute;
+left: 35%;"><li style="text-align: center;color: #333333;font-size: 0.688em;font-family: "HelveticaNeueLTProCn", helvetica, arial, sans-serif;text-decoration: none;">BACK</li></a>
+			<li><a href="#tab3">PREFERENCES</a></li>
+			<li><a href="#tab4">FEEDBACK</a></li>
+			<!--<li><a href="#tab5"></a></li>-->
+		</ul>
+		
+		
+		<div id="tab2" class="report_my ajx-content ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-4" role="tabpanel" aria-hidden="false" style="display: block;">
+			<h1 class="h1">PROFILE</h1>
+			<hr>
+			<div class="photo_section">
+				<div class="photo_part">
+				<h2>Photo</h2>
+					<div class="pic"></div>
+				</div>
+				<div class="photo_botton">
+					<input type="button" value="REMOVE ME" style="background:#0079FF" class="read_btn">
+					<input type="button" value="DROP THIS" style="background:#0079FF;margin: 39px 96px 0px 0px;" class="read_btn">
+				</div>
+			</div>
+			<div class="down_form">
+				<form>
+				<div class="row_fild">
+					<label class="lab_ftname">First name</label><input type="text" placeholder="First " name="" size="20" class="name_txt">
+				</div>
+				<div class="row_fild">
+					<label class="lab_ftname">Last name</label><input type="text" placeholder="Last " size="20" name="" class="name_txt">
+				</div>
+				<div class="row_fild">
+					<label class="lab_ftname">Email address</label><input type="text" placeholder="xyz@gmail.com" name="" size="20" class="name_txt">
+				</div>
+					<input type="button" value="SAVE" style="background:#0079FF">
+				</form>
+			</div>
+		</div>
+
+		<div id="tab3" class="ajx-content report_my ">
+			<h1 class="h1">PREFERENCES</h1>
+			<hr>
+			
+			<h3 class="h3 padtop2per" style="padding-bottom:2%;">Tags</h3>
+				<div class="">
+					<input type="button" value="Home &nbsp; &times;" style="" class="white_btn">
+					<input type="button" value="Home1 &nbsp; &times;" style="" class="white_btn">
+					<input type="button" value="Home2 &nbsp; &times;" style="" class="white_btn">
+					<input type="button" value="Home3 &nbsp; &times;" style="" class="white_btn">
+				</div>
+			<h3 class="h3 padtop2per" style="padding-top:25px;color:#0079FF">&#43; ADD TAG</h3>
+			<input type="text" placeholder="New tag" name="" size="20" class="tag_txt">
+			<div class="full">
+			<input type="button" value="SAVE" style="background:#0079FF; margin-top:126px;" class="read_btn">
+			</div>
+		</div>
+
+		<div id="tab4" class="report_my ajx-content">
+			<h1 class="h1">FEEDBACK</h1>
+			<hr>
+			<h3 class="h3 padtop2per" style="padding-bottom:2%;">We would love to hear from you!</h3>
+			<textarea style="width: 561px;height: 145px; padding:1%;" placeholder="Message"></textarea>
+			<h5 class="h5 padtop2per" style="padding-bottom:2%;padding-top: 5px;">250 characters remaining</h5><br>
+			<h3 class="h3 padtop2per" style="padding-bottom:2%;">Attachment</h3>
+			<span><input type="button" value="CHOOSE FILE" style="background:#B5BBC2;margin: 0px 25px 0px 0px;width: 157px;" class="read_btn"></span><span>No file chosen</span>
+			<h3 class="h3 padtop2per" style="padding-bottom:2%;padding-top: 55px;">Please rate us!</h3>
+			
+			<input type="button" value="SUBMIT" style="background:#0079FF" class="read_btn">
+			
+		</div>
+		<div id="tab5" class="ajx-content">
+		</div>
+	</div>
+</div>
+<div class="footer-tooth clearfix">
+	<div class="footer-tooth-middle"></div>
+	<div class="footer-tooth-right"></div>
+</div>
+<div class="cd-popup" role="alert">
+	<div class="cd-popup-container">
+
+		<div id="tabde" class="report ajx-content">
+			<div style="float:left;width:55%;margin-right: 3%;">
+				<h1 class="h1">AUGUST 26, 2014
+					<span style="color: #919191;font-size: 0.8em;font-weight: normal;">12:36PM</span>
+
+				</h1>
+				<hr style="width: 100%;">
+				<div class="mar10px">
+					<h1 class="font3em">Dds Art</h1>
+
+					<p class="padtop2per">Near 123</p>
+
+					<p>Some Where 345</p>
+				</div>
+				<div class="detailHead">
+					<h1 class="font2em" style="margin-left: 5px;">Map-93 <span class="colorblue right">$1.25</span></h1>
+				</div>
+				<div class="rightside-list-holder border">
+					<ul>
+						<li>
+							<span class="rightside-li-date-text">1. KJHG Med</span>
+							<select>
+								<option value="volvo">Home</option>
+								<option value="saab">Home</option>
+							</select>
+							<span class="rightside-li-right-text">$1.99</span>
+						</li>
+						<li>
+							<span class="rightside-li-date-text">2. LKJ - Ether</span>
+							<select>
+								<option value="volvo">Home</option>
+								<option value="saab">Home</option>
+							</select>
+							<span class="rightside-li-right-text">$15.99</span>
+						</li>
+						<li>
+							<span class="rightside-li-date-text">3. This thing</span>
+							<select>
+								<option value="volvo">Home</option>
+								<option value="saab">Home</option>
+							</select>
+							<span class="rightside-li-right-text">$22.99</span>
+						</li>
+						<li>
+							<span class="rightside-li-date-text">4. Pink stuff</span>
+							<select>
+								<option value="volvo">Home</option>
+								<option value="saab">Home</option>
+							</select>
+							<span class="rightside-li-right-text">$14.49</span>
+						</li>
+						<li style="border-bottom: 1px dotted #919191;">
+							<span class="rightside-li-date-text">5. Somethings</span>
+							<select>
+								<option value="volvo">Home</option>
+								<option value="saab">Home</option>
+							</select>
+							<span class="rightside-li-right-text">$13.19</span>
+						</li>
+					</ul>
+
+
+					<!-- second list starts-->
+					<ul>
+						<li>
+							<span class="rightside-li-date-text">ABC</span>
+
+							<span class="rightside-li-right-text">$81.65</span>
+						</li>
+						<li>
+							<span class="rightside-li-date-text">BB</span>
+							<span class="rightside-li-right-text">$7.60</span>
+						</li>
+						<li style="border-bottom: 1px solid #919191;">
+							<span class="rightside-li-date-text">ZZZ</span>
+							<span class="rightside-li-right-text">$89.25</span>
+						</li>
+					</ul>
+
+
+					<!-- second list ends -->
+					<h1 class="h1 padtop2per" style="padding-bottom:2%;">My notes</h1>
+					<textarea style="width: 561px;height: 145px; padding:1%;" placeholder="Write notes here..."></textarea>
+					<input type="button" value="DELETE" style="background:#FC462A;"></input>
+					<input type="button" value="SAVE" style="background:#0079FF"></input>
+
+
+				</div>
+
+
+			</div>
+
+			<div style="width:38%;float: left;padding-top: 4%;">
+				<img style="width: 390px;height: 590px;padding-left: 8%;" src="static/img/details.JPG"/>
+			</div>
+		</div>
+		<a href="#0" class="cd-popup-close img-replace"></a>
+	</div>
+	<!-- cd-popup-container -->
+</div>
+</div>
+<!-- cd-popup -->
+<link rel="stylesheet" href="static/css/popup.css">
+<!-- Resource style -->
+<script src="static/js/modernizr.js"></script>
+<!-- Modernizr -->
+<script src="static/js/mainpop.js"></script>
+<!-- Resource jQuery -->
+</body>
+</html>
